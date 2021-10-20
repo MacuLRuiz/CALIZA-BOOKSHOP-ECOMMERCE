@@ -1,6 +1,6 @@
 
 import { Navbar, Container, NavDropdown, Nav } from 'react-bootstrap';
-import styles from '../styles.css'
+import CartWidget from './CartWidget';
 
 const NavBar = () => {
     return(
@@ -24,6 +24,13 @@ const NavBar = () => {
                     </NavDropdown>
                 </Nav>
                 </Navbar.Collapse>
+                <div class="icon-container">
+                    <CartWidget/>
+                    <a>
+                        <img class="icon" src="../../user.svg" alt="user icon" />
+                    </a>
+                </div>
+
             </Container>
         </Navbar>
 
