@@ -10,7 +10,6 @@ function App() {
       <header/>
       <NavBar/>
       <ItemListContainer greeting="Hola Mundo!"/>
-      <ItemCount />
 
     </div>
   );
