@@ -12,6 +12,9 @@ const Item = ({prod}) => {
             <p class="description">{prod.description}</p>
             <span class="price">${prod.price}</span>
             <ItemCount stock={prod.stock} />
+            <button class="button_add">
+                agregar al carrito
+            </button>
         </div>
     )
 }

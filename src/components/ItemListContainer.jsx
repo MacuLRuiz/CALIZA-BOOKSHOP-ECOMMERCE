@@ -5,7 +5,7 @@ import ItemList from "./ItemList";
 
 
 
-export function ItemListContainer ({ greeting }) {
+export function ItemListContainer () {
 
 const [product, setProduct] = useState([]);
 const [loading, setLoading] = useState(true);
@@ -19,10 +19,11 @@ getFetch
 
 console.log(product)
     return (
-        <div class= "items-container" >
-            <h1> {greeting}</h1>;
-            <ItemList product={product}/>
-        </div>
+        <>
+            <div class= "items-container" >
+                <ItemList product={product}/>
+            </div>
+        </>
 
     )
     

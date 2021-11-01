@@ -21,8 +21,8 @@ const ItemCount = ({stock, inicial}) => {
 
             </button>
 
-            <div>
-                <p id="counter" >{counter}</p>
+            <div id="counter" >
+                <p>{counter}</p>
             </div>
 
             <button class="buttonCount" onClick={restarContador}>
