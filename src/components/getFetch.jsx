@@ -32,3 +32,26 @@ const product = [
         }, 2000);
     })
     
+
+
+
+
+    const OneProduct = 
+        {
+            id: 1,
+            name: "Harry Potter",
+            img: "../../books/harrypotter.png",
+            description: "Descripción de producto 1",
+            price: 1500,
+            stock: 8
+        };
+    
+    
+        export const getFetchOne = new Promise((res, rej) => {
+            setTimeout(() => {
+                res(OneProduct);
+            }, 2000);
+        })
+
+    
+    
