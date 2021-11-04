@@ -1,51 +1,33 @@
 import React from 'react'
 import {useParams} from 'react-router-dom'
 import { useEffect, useState } from 'react';
-import {getFetchDetail} from '../components/getFetchDetail';
 import ItemDetail from './ItemDetail'
+import getFetchDetail from './getFetchDetail';
 
 
-export default function ItemDetailContainer () {
+const ItemDetailContainer = () => {
 
-    const [Prod, setProd] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [detail, setDetail] = useState({})
 
-    const { productoId } = useParams()
-    
+    const {productoId} = useParams()
+
     useEffect(() => {
-
-    if (productoId) {
         getFetchDetail
-        .then(res => {    
-            setProd(res.filter(prod =>prod.id === productoId))
-            console.log(res)
+        .then(response => {        
+            setDetail(response.find(prod => prod.id === parseInt(productoId)))
         })
-        .catch(err => console.log(err))
-        .finally(()=> setLoading(false))
-        
-
-    }
-
-    else {
-        getFetchDetail
-        .then(res => {
-            console.log("llamado a la API");    
-            setProd(res)
-            console.log(res)
-            // .filter(prod =>prod.id === productoId)
-        })
-        .catch(err => console.log(err))
-        .finally(()=> setLoading(false))
-
-        }
-    
-        }, [productoId])
-
-    console.log (Prod);
+        .catch (error => alert("Error:", error))
+    },[productoId])   
 
     return (
-        <>
-            <ItemDetail Prod={Prod}/>
-        </>
+            <div>
+                <ItemDetail detail={detail}/>
+            </div>
     )
 }
+
+export default ItemDetailContainer
+
+
+
+

@@ -1,28 +1,27 @@
 import { prettyDOM } from '@testing-library/dom'
 import React from 'react'
 
-const ItemDetail = ({Prod}) => {
+const ItemDetail = ({detail}) => {
     return (
         <div class="itemDetail">
             <div class="imgContainer">
-                <img src={Prod.img} alt="" />
+                <img src= {detail.img} alt="" />
             </div>
-
             <div class="itemDetailDescription">
                 <h4>
-                    {Prod.name}
+                    {detail.name}
                 </h4>
                 <div>
-                    Precio: ${Prod.price}
+                    {detail.author}
                 </div>
                 <div>
-                    Autor: {Prod.author}
+                    {detail.categoria}
                 </div>
                 <div>
-                    Categoría: {Prod.categoria}
+                    Precio: ${detail.price}
                 </div>
                 <div>
-                    {Prod.description}
+                    Sinopsis: {detail.sinopsis}
                 </div>
                 <button class="buttonDetail_add">
                 Comprar

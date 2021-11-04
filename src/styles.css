@@ -76,6 +76,7 @@ box-shadow: 0px 0px 16px -2px rgba(0,0,0,0.88);
 .items-container {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
     background-color: #FAF2E9;

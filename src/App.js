@@ -1,8 +1,7 @@
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import styles from "./styles.css"
 import NavBar from "./components/NavBar";
 import {ItemListContainer} from "./components/ItemListContainer";
-import ItemCount from "./components/ItemCount";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 
 
@@ -10,7 +9,7 @@ function App() {
   return (
     <div className="App">
  
-      <Router>
+      <BrowserRouter>
       <header/>
       <NavBar/>
       <main id="main">
@@ -18,7 +17,6 @@ function App() {
         <Switch>
         <Route exact path = '/'>
               <ItemListContainer/>
-              <ItemDetailContainer/>
             </Route>
 
             <Route exact path = '/categoria/:id'>
@@ -31,7 +29,7 @@ function App() {
 
         </Switch>
         </main>
-      </Router>
+      </BrowserRouter>
 
       
 
