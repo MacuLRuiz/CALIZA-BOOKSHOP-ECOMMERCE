@@ -31,7 +31,7 @@ useEffect(() => {
     }   
 }, [id])
 
-console.log(id)
+console.log(product)
     return (
         <>
             <div class= "items-container" >
