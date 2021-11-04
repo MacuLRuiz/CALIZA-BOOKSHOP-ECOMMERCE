@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
 import ItemCount from './ItemCount';
 
@@ -12,9 +13,12 @@ const Item = ({prod}) => {
             <p class="description">{prod.description}</p>
             <span class="price">${prod.price}</span>
             <ItemCount stock={prod.stock} />
-            <button class="button_add">
-                agregar al carrito
-            </button>
+            
+            <Link to={`producto/${prod.id}`}>
+                <button class="button_add">
+                    Ver más
+                </button>
+            </Link>
         </div>
     )
 }

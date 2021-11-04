@@ -15,6 +15,12 @@ const ItemDetail = ({prod}) => {
                     Precio: ${prod.price}
                 </div>
                 <div>
+                    Autor: {prod.author}
+                </div>
+                <div>
+                    Categoría: 
+                </div>
+                <div>
                     {prod.description}
                 </div>
                 <button class="buttonDetail_add">
