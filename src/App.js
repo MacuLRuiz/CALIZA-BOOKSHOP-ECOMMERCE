@@ -13,9 +13,9 @@ function App() {
       <header/>
       <NavBar/>
       <main id="main">
-      <h1>Destacados</h1>
         <Switch>
         <Route exact path = '/'>
+              <h1>Destacados de la semana</h1>
               <ItemListContainer/>
             </Route>
 

@@ -1,5 +1,6 @@
 import { prettyDOM } from '@testing-library/dom'
 import React from 'react'
+import ItemCount from './ItemCount';
 
 const ItemDetail = ({detail}) => {
     return (
@@ -23,6 +24,10 @@ const ItemDetail = ({detail}) => {
                 <div>
                     Sinopsis: {detail.sinopsis}
                 </div>
+                <div className="ItemCountDetail">
+                    <ItemCount stock={detail.stock} />
+                </div>
+                
                 <button class="buttonDetail_add">
                 Comprar
             </button>

@@ -3,15 +3,13 @@ import { useState } from "react"
 
 const ItemCount = ({stock, inicial}) => {
     inicial = 1
-    stock = 7
-
     const [counter, setCounter] = useState(inicial)
             const sumarContador = () =>
                 counter <= stock - 1 ? setCounter(counter + 1) : console.log('No hay stock suficiente')
                 console.log({stock})
             
             const restarContador = () => 
-                counter > 0 ? setCounter(counter - 1) : console.log ('Debés seleccionar una cantidad')
+                counter > 1 ? setCounter(counter - 1) : console.log ('Debés seleccionar una cantidad')
 
 
     return(
