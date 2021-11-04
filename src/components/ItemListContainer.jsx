@@ -17,7 +17,7 @@ useEffect(() => {
     
     if(id) {
         getFetch
-        .then(res => setProduct(res.filter(prod =>prod.categoria === id)))
+        .then(res => setProduct(res.filter(prod =>prod.category === id)))
         .catch(err => console.log(err))
         .finally(()=> setLoading(false))
 

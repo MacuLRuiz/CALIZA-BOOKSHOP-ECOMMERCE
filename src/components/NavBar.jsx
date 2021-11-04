@@ -6,18 +6,16 @@ const NavBar = () => {
     return(
         <Navbar id="NavBar" expand="lg">
             <Container>
-                <a>
-                    <img src="../../logo2.png" alt="logo" />
-                </a>
+                <Link to = '/'><img src="../../logo2.png" alt="logo" /></Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
                     <Nav.Link><Link to='/'>Home</Link></Nav.Link>
                     <Nav.Link>¿Cómo comprar?</Nav.Link>
                     <NavDropdown title="Categorías" id="basic-nav-dropdown">
-                    <NavDropdown.Item><Link to = '/categoria/Romantica'>Romantica</Link></NavDropdown.Item>
-                    <NavDropdown.Item> <Link to='/categoria/Fantasia'>Fantasia</Link> </NavDropdown.Item>
-                    <NavDropdown.Item><Link to='/categoria/Ciencia Ficcion'>Ciencia Ficcion</Link></NavDropdown.Item>
+                    <NavDropdown.Item><Link to = '/category/Romantica'>Romantica</Link></NavDropdown.Item>
+                    <NavDropdown.Item> <Link to='/category/Fantasia'>Fantasia</Link> </NavDropdown.Item>
+                    <NavDropdown.Item><Link to='/category/Ciencia Ficcion'>Ciencia Ficcion</Link></NavDropdown.Item>
                     <NavDropdown.Item>Policiales</NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item>No Ficción</NavDropdown.Item>

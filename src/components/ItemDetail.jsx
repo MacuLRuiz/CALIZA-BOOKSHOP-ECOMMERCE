@@ -16,7 +16,7 @@ const ItemDetail = ({detail}) => {
                     {detail.author}
                 </div>
                 <div>
-                    {detail.categoria}
+                    {detail.category}
                 </div>
                 <div>
                     Precio: ${detail.price}

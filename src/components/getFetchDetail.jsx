@@ -7,7 +7,7 @@ const productDetail = [
         price: 1500,
         stock: 8,
         author: "J.K Rouling",
-        categoria: "Fantasia"
+        category: "Fantasia"
     },
     {
         id: 2,
@@ -17,7 +17,7 @@ const productDetail = [
         price: 1899,
         stock: 6,
         author: "Frank Herbert",
-        categoria: "Ciencia Ficcion"
+        category: "Ciencia Ficcion"
     },
     {
         id: 3,
@@ -27,7 +27,7 @@ const productDetail = [
         price: 2459,
         stock: 7,
         author: "George R.R. Martin",
-        categoria: "Fantasia"
+        category: "Fantasia"
     },
     {
         id: 4,
@@ -37,7 +37,7 @@ const productDetail = [
         price: 1659,
         stock: 8,
         author: "Florencia Bonelli",
-        categoria: "Romantica"
+        category: "Romantica"
     },
     {
         id: 5,
@@ -47,7 +47,7 @@ const productDetail = [
         price: 2000,
         stock: 5,
         author: "George Orwell",
-        categoria: "Ciencia Ficcion"
+        category: "Ciencia Ficcion"
     },
     {
         id: 6,
@@ -57,7 +57,7 @@ const productDetail = [
         price: 12000,
         stock: 5,
         author: "Jane Austen",
-        categoria: "Romantica"
+        category: "Romantica"
     },
 ];
 

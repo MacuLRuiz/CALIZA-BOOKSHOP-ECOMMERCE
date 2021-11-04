@@ -9,15 +9,15 @@ const ItemDetailContainer = () => {
 
     const [detail, setDetail] = useState({})
 
-    const {productoId} = useParams()
+    const {id} = useParams()
 
     useEffect(() => {
         getFetchDetail
         .then(response => {        
-            setDetail(response.find(prod => prod.id === parseInt(productoId)))
+            setDetail(response.find(prod => prod.id === parseInt(id)))
         })
         .catch (error => alert("Error:", error))
-    },[productoId])   
+    },[id])   
 
     return (
             <div className="itemDetail-container">
