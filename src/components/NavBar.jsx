@@ -13,10 +13,11 @@ const NavBar = () => {
                     <Nav.Link><Link to='/'>Home</Link></Nav.Link>
                     <Nav.Link>¿Cómo comprar?</Nav.Link>
                     <NavDropdown title="Categorías" id="basic-nav-dropdown">
-                    <NavDropdown.Item><Link to = '/category/Romantica'>Romantica</Link></NavDropdown.Item>
-                    <NavDropdown.Item> <Link to='/category/Fantasia'>Fantasia</Link> </NavDropdown.Item>
-                    <NavDropdown.Item><Link to='/category/Ciencia Ficcion'>Ciencia Ficcion</Link></NavDropdown.Item>
-                    <NavDropdown.Item>Policiales</NavDropdown.Item>
+                    <NavDropdown.Item><Link to = '/category/Romantica'>Romántica</Link></NavDropdown.Item>
+                    <NavDropdown.Item> <Link to='/category/Fantasia'>Fantasía</Link> </NavDropdown.Item>
+                    <NavDropdown.Item><Link to='/category/Ciencia Ficcion'>Ciencia Ficción</Link></NavDropdown.Item>
+                    <NavDropdown.Item><Link to='/category/Suspenso'>Suspenso</Link></NavDropdown.Item>
+                    <NavDropdown.Item><Link to='/category/Terror'>Terror</Link></NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item>No Ficción</NavDropdown.Item>
                     </NavDropdown>
