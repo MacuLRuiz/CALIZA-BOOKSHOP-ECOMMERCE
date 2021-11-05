@@ -8,6 +8,7 @@ const product = [
         price: 1500,
         stock: 8,
         author: "J.K Rouling",
+        sinopsis: "Sinopsis",
         category: "Fantasia"
     },
     {
@@ -18,6 +19,7 @@ const product = [
         price: 1899,
         stock: 6,
         author: "Frank Herbert",
+        sinopsis: "Sinopsis",
         category: "Ciencia Ficcion"
     },
     {
@@ -28,6 +30,7 @@ const product = [
         price: 2459,
         stock: 7,
         author: "George R.R. Martin",
+        sinopsis: "Sinopsis",
         category: "Fantasia"
     },
     {
@@ -38,6 +41,7 @@ const product = [
         price: 1659,
         stock: 8,
         author: "Florencia Bonelli",
+        sinopsis: "Sinopsis",
         category: "Romantica"
     },
     {
@@ -48,6 +52,7 @@ const product = [
         price: 2000,
         stock: 5,
         author: "George Orwell",
+        sinopsis: "Sinopsis",
         category: "Ciencia Ficcion"
     },
     {
@@ -58,6 +63,7 @@ const product = [
         price: 12000,
         stock: 5,
         author: "Jane Austen",
+        sinopsis: "Sinopsis",
         category: "Romantica"
     },
     {
@@ -68,6 +74,7 @@ const product = [
         price: 1100,
         stock: 11,
         author: "Stephen King",
+        sinopsis: "Sinopsis",
         category: "Terror"
     },
     {
@@ -78,6 +85,7 @@ const product = [
         price: 1100,
         stock: 5,
         author: "Dan Brown",
+        sinopsis: "Sinopsis",
         category: "Suspenso"
     },
     {
@@ -88,6 +96,7 @@ const product = [
         price: 900,
         stock: 14,
         author: "Florencia Bonelli",
+        sinopsis: "Sinopsis",
         category: "Romantica"
     },
     {
@@ -98,6 +107,7 @@ const product = [
         price: 12000,
         stock: 9,
         author: "Stephen King",
+        sinopsis: "Sinopsis",
         category: "Terror"
     },
     {
@@ -108,6 +118,7 @@ const product = [
         price: 990,
         stock: 4,
         author: "Dan Brown",
+        sinopsis: "Sinopsis",
         category: "Suspenso"
     },
     {
@@ -118,6 +129,7 @@ const product = [
         price: 1100,
         stock: 13,
         author: "J.R.R. Tolkien",
+        sinopsis: "Sinopsis",
         category: "Fantasia"
     },
 
@@ -130,3 +142,4 @@ const product = [
         }, 2000);
     })
     
+    export default getFetch

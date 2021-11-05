@@ -1,8 +1,11 @@
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import styles from "./styles.css"
 import NavBar from "./components/NavBar";
-import {ItemListContainer} from "./components/ItemListContainer";
-import ItemDetailContainer from "./components/ItemDetailContainer";
+import {ItemListContainer} from "./components/containers/ItemListContainer";
+import ItemDetailContainer from "./components/containers/ItemDetailContainer";
+import Banner from './components/Banner';
+
+
 
 
 function App() {
@@ -15,6 +18,7 @@ function App() {
       <main id="main">
         <Switch>
         <Route exact path = '/'>
+              <Banner></Banner>
               <h1>Destacados de la semana</h1>
               <ItemListContainer/>
             </Route>

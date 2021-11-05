@@ -1,8 +1,8 @@
 import React from 'react'
 import {useParams} from 'react-router-dom'
 import { useEffect, useState } from 'react';
-import ItemDetail from './ItemDetail'
-import getFetchDetail from './getFetchDetail';
+import ItemDetail from '../ItemDetail'
+import getFetch from '../getFetch';
 
 
 const ItemDetailContainer = () => {
@@ -12,7 +12,7 @@ const ItemDetailContainer = () => {
     const {id} = useParams()
 
     useEffect(() => {
-        getFetchDetail
+        getFetch 
         .then(response => {        
             setDetail(response.find(prod => prod.id === parseInt(id)))
         })

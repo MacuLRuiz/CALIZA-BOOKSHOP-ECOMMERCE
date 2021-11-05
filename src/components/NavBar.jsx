@@ -6,7 +6,7 @@ const NavBar = () => {
     return(
         <Navbar id="NavBar" expand="lg">
             <Container>
-                <Link to = '/'><img src="../../logo2.png" alt="logo" /></Link>
+                <Link to = '/'><img id="logo" src="../../logoCaliza.png" alt="logo" /></Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">

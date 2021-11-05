@@ -1,6 +1,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
 
+a {
+    color: rgba(0,0,0,.55);
+    text-decoration: none;
+}
+
+.app {
+    background-color: #FAF2E9;
+}
+
+
 
 h1 {
     font-family: 'Roboto', sans-serif;
@@ -10,6 +20,10 @@ h1 {
 
 #NavBar {
     background-color: #34CED8;
+}
+
+#logo {
+    width: 50%;
 }
 
 .icon {
