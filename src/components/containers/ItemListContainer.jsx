@@ -33,10 +33,16 @@ useEffect(() => {
 
 console.log(product)
     return (
-        <>
-            <div class= "items-container" >
+        <>  {
+
+            loading ? <h2> LOADING... </h2> 
+            : <div>
+                <div class= "items-container" >
                 <ItemList product={product}/>
+                </div>
             </div>
+        }
+            
         </>
 
     )

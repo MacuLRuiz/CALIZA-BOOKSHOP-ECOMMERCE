@@ -8,6 +8,8 @@ import getFetch from '../getFetch';
 const ItemDetailContainer = () => {
 
     const [detail, setDetail] = useState({})
+    const [loading, setLoading] = useState(true);
+    
 
     const {id} = useParams()
 
@@ -17,12 +19,18 @@ const ItemDetailContainer = () => {
             setDetail(response.find(prod => prod.id === parseInt(id)))
         })
         .catch (error => alert("Error:", error))
+        .finally(()=> setLoading(false))
     },[id])   
 
     return (
-            <div className="itemDetail-container">
-                <ItemDetail detail={detail}/>
-            </div>
+            <>
+                {   loading ? <h2> LOADING... </h2> 
+                    : <div className="itemDetail-container">
+                        <ItemDetail detail={detail}/>
+                    </div>
+                }
+            </>
+            
     )
 }
 
