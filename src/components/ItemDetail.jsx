@@ -8,9 +8,7 @@ const ItemDetail = ({detail}) => {
 
     const [counter, setCounter] = useState(1)
 
-    const {cartList, mostrarListado, addItem} = UseCartContext()
-    // console.log(cartList)
-    // console.log(mostrarListado())
+    const {cartList, addItem} = UseCartContext()
 
     const onAdd = (cant) => {
         setCounter (cant)
