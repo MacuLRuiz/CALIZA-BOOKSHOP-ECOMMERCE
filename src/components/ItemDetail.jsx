@@ -1,18 +1,24 @@
 import { prettyDOM } from '@testing-library/dom'
 import React from 'react'
 import { useState } from 'react';
+import { UseCartContext } from '../context/CartContext';
 import ItemCount from './ItemCount';
 
 const ItemDetail = ({detail}) => {
 
     const [counter, setCounter] = useState(1)
 
+    const {cartList, mostrarListado, addItem} = UseCartContext()
+    // console.log(cartList)
+    // console.log(mostrarListado())
+
     const onAdd = (cant) => {
         setCounter (cant)
+        addItem({detail, quantity: cant})
 
     }
 
-    console.log(counter)
+    console.log(cartList)
 
     return (
         <div class="itemDetail">

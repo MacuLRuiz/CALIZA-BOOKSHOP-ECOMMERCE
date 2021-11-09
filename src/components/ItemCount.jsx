@@ -23,7 +23,7 @@ const ItemCount = ({stock, inicial, onAdd}) => {
         setCambiarBoton(true)
     }
 
-    console.log(cambiarBoton)
+    // console.log(cambiarBoton)
 
     return(
         <div id="button-container">
