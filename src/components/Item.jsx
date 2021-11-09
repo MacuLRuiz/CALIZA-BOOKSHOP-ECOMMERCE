@@ -12,7 +12,7 @@ const Item = ({prod}) => {
             <h3 class="title">{prod.name}</h3>
             <p class="description">{prod.description}</p>
             <span class="price">${prod.price}</span>
-            <ItemCount stock={prod.stock} />
+            {/* <ItemCount stock={prod.stock} /> */}
             
             <Link to={`/item/${prod.id}`}>
                 <button class="button_add">

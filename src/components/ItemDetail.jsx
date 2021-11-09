@@ -1,8 +1,19 @@
 import { prettyDOM } from '@testing-library/dom'
 import React from 'react'
+import { useState } from 'react';
 import ItemCount from './ItemCount';
 
 const ItemDetail = ({detail}) => {
+
+    const [counter, setCounter] = useState(1)
+
+    const onAdd = (cant) => {
+        setCounter (cant)
+
+    }
+
+    console.log(counter)
+
     return (
         <div class="itemDetail">
             <div class="imgContainer">
@@ -38,12 +49,9 @@ const ItemDetail = ({detail}) => {
                         Seleccionar cantidad:
                     </div>
                     <div className="ItemCountDetail">
-                        <ItemCount stock={detail.stock} />
+                        <ItemCount stock={detail.stock} onAdd={onAdd} />
                     </div>
                     
-                    <button class="buttonDetail_add">
-                        Comprar
-                    </button>
                 </div>
 
             </div>

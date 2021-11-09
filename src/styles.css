@@ -69,6 +69,13 @@ box-shadow: 0px 0px 16px -2px rgba(0,0,0,0.88);
 }
 
 #button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#button-container-Counter {
     width: 20%;
     display: flex;
     flex-direction: row;
