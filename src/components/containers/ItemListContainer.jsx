@@ -37,7 +37,7 @@ useEffect(() => {
 
             loading ? <h2> LOADING... </h2> 
             : <div>
-                <div class= "items-container" >
+                <div className= "items-container" >
                 <ItemList product={product}/>
                 </div>
             </div>

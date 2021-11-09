@@ -16,7 +16,6 @@ function App() {
       <CartContextProvider>
  
         <BrowserRouter>
-        <header/>
         <NavBar/>
         <main id="main">
           <Switch>

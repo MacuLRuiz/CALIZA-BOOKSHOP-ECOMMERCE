@@ -30,7 +30,7 @@ const ItemCount = ({stock, inicial, onAdd}) => {
 
             <div id="button-container-Counter">
                 
-                <button class="buttonCount" onClick={sumarContador}>
+                <button className="buttonCount" onClick={sumarContador}>
                     <img src="https://icongr.am/octicons/plus.svg?size=47&color=0a91a3" alt="plus" />
                 </button>
 
@@ -38,7 +38,7 @@ const ItemCount = ({stock, inicial, onAdd}) => {
                     <p>{counter}</p>
                 </div>
 
-                <button class="buttonCount" onClick={restarContador}>
+                <button className="buttonCount" onClick={restarContador}>
                     <img src="https://icongr.am/octicons/horizontal-rule.svg?size=47&color=0a91a3" alt="rest" />
                 </button>
 
@@ -50,10 +50,10 @@ const ItemCount = ({stock, inicial, onAdd}) => {
                 {cambiarBoton ? 
 
                     <Link to="/cart"> 
-                        <button class="buttonDetail_add"> Terminar Compra </button>                                     
+                        <button className="buttonDetail_add"> Terminar Compra </button>                                     
                     </Link>
                 :
-                <button class="buttonDetail_add" onClick={handlerOnAdd}> Agregar </button>
+                <button className="buttonDetail_add" onClick={handlerOnAdd}> Agregar </button>
                 }
 
             </div>

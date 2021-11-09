@@ -23,10 +23,10 @@ const NavBar = () => {
                     </NavDropdown>
                 </Nav>
                 </Navbar.Collapse>
-                <div class="icon-container">
+                <div className="icon-container">
                     <CartWidget/>
                     <a>
-                        <img class="icon" src="../../user.svg" alt="user icon" />
+                        <img className="icon" src="../../user.svg" alt="user icon" />
                     </a>
                 </div>
 
