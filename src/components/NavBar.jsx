@@ -25,9 +25,9 @@ const NavBar = () => {
                 </Navbar.Collapse>
                 <div className="icon-container">
                     <CartWidget/>
-                    <a>
+                    {/* <a>
                         <img className="icon" src="../../user.svg" alt="user icon" />
-                    </a>
+                    </a> */}
                 </div>
 
             </Container>
