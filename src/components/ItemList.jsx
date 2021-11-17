@@ -3,12 +3,12 @@ import Item from './Item';
 // import Loader from "../Loader/Loader";
 
 
-const ItemList = ({product}) => {
+const ItemList = ({products}) => {
 
-
+console.log(products)
 
 return (
-    product.map(prod=> <Item  key={prod.id} prod={prod}/>
+    products.map(prod=> <Item  key={prod.id} prod={prod}/>
                 
                 )
     )
