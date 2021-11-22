@@ -6,6 +6,7 @@ import ItemDetailContainer from "./components/containers/ItemDetailContainer";
 import Banner from './components/Banner';
 import CartContextProvider, { CartContext } from './context/CartContext';
 import Cart from './components/Cart';
+import UserForm from './components/UserForm';
 
 
 
@@ -40,6 +41,10 @@ function App() {
               
               <Route exact path='/Cart'>
                 <Cart/>
+              </Route>
+
+              <Route exact path='/BuyerForm'>
+                <UserForm/>
               </Route>
 
           </Switch>
