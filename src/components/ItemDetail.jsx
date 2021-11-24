@@ -6,13 +6,14 @@ import ItemCount from './ItemCount';
 
 const ItemDetail = ({detail}) => {
 
-    const [counter, setCounter] = useState(1)
+    // const [counter, setCounter] = useState(1)
+  
     const [cambiarBoton,setCambiarBoton] = useState(false)
 
-    const {cartList, addItem} = UseCartContext()
+    const { addItem } = UseCartContext()
 
-    const handlerOnAdd = (cant) => {
-        // alert(`agregaste ${cant} productos al carrito`)
+    const handlerOnAdd = (cant, setCounter) => {
+
         setCounter (cant)
         addItem({detail, quantity: cant})
         setCambiarBoton(true)
@@ -20,7 +21,6 @@ const ItemDetail = ({detail}) => {
 
 
 
-    console.log(cartList)
 
     return (
         <div className="itemDetail">
@@ -59,10 +59,19 @@ const ItemDetail = ({detail}) => {
 
                         {cambiarBoton ? 
 
-                            <Link to="/Cart"> 
-                                <button className="buttonDetail_add"> Terminar Compra </button>                                     
-                            </Link>
+                            <div className="buttonPurchase_container">
+                                <Link to="/Cart"> 
+                                    <button className="buttonDetail_add"> Terminar Compra </button>                                     
+                                </Link>
+
+                                <Link to="/"> 
+                                <button className="buttonBack"> Seguir comprando </button>                                     
+                                </Link>
+
+                            </div>
                         :
+                        
+                            
                             <div>
                                 <div className="subtitle">
                                     Seleccionar cantidad:
@@ -75,12 +84,8 @@ const ItemDetail = ({detail}) => {
                             
                         }
 
-                    </div>
-
-                    
-                    
+                    </div>                 
                 </div>
-
             </div>
         </div>
     )

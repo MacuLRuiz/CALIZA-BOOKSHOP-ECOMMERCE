@@ -35,10 +35,19 @@ const ItemDetailContainer = () => {
 
     return (
             <>
-                {   loading ? <h2> LOADING... </h2> 
-                    : <div className="itemDetail-container">
+                {   loading ? 
+                
+                        // <h2> LOADING... </h2> 
+                        <div className="loadingio-spinner-spinner-azwl2vh0tq8"><div className="ldio-3aj1p72vvt4">
+                        <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        </div></div>
+
+                    :   
+                    
+                        <div className="itemDetail-container">
                         <ItemDetail detail={detail}/>
-                    </div>
+                        </div>
+
                 }
             </>
             

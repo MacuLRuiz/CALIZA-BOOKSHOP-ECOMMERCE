@@ -1,5 +1,5 @@
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
-import styles from "./styles.css"
+import "./styles.css";
 import NavBar from "./components/NavBar";
 import {ItemListContainer} from "./components/containers/ItemListContainer";
 import ItemDetailContainer from "./components/containers/ItemDetailContainer";

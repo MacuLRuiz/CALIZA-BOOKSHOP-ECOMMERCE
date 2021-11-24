@@ -5,24 +5,21 @@ import firebase from "firebase/app";
 import 'firebase/firestore'
 import { getFirestore } from './getFirestore';
 import { Link } from "react-router-dom";
-import { Modal, Button } from 'react-bootstrap';
-import CartModal from "./CartModal";
+import { Modal} from 'react-bootstrap';
 import CartList from "./CartList";
 
 const Cart = () => {
 
-    const { cartList, precioTotal, precioProductoTotal, clear, removeItem } = UseCartContext()
+    const { cartList, precioTotal, precioProductoTotal, clear } = UseCartContext()
     
 
+    // Operaciones para el funcionamiento del Modal
     const [show, setShow] = useState(false);
     
-  
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
 
-    console.log(cartList)
-    console.log(precioTotal())
 
     const [orderId, setOrderId] = useState("");
     const [buyerForm, setBuyerForm] = useState({name:"", surname:"", phone:"", email:"", provincia:"", localidad:"", adress:""});
@@ -72,7 +69,6 @@ const Cart = () => {
         batch.commit()
         .catch (error => alert("Error:", error))
 
-        console.log(order)
         })
     }
 
@@ -115,10 +111,13 @@ const Cart = () => {
                             <Modal.Body className="">
                                 {`Su código de orden es: ${orderId}`}
                             </Modal.Body>
-                                                
-                            <Link to="/" className="buttonDetail_add" onClick={handleClose}>
-                                Cerrar
-                            </Link>
+
+                             <Modal.Footer>
+                                <Link to="/" className="buttonDetail_add" onClick={handleClose}>
+                                    Cerrar
+                                </Link>
+                            </Modal.Footer>                   
+                            
 
                         </>
                         
@@ -126,11 +125,8 @@ const Cart = () => {
 
 
                 </Modal>
-                    
-
-                    
+                           
             </div>
-
             
         )
 

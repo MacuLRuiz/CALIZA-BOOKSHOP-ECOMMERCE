@@ -37,7 +37,7 @@ const ItemCount = ({stock, inicial, handlerOnAdd}) => {
 
             </div>
             
-                <button className="buttonDetail_add" onClick={()=> handlerOnAdd(counter)}> Agregar </button>
+                <button className="buttonDetail_add" onClick={()=> handlerOnAdd(counter, setCounter)}> Agregar </button>
 
 
         </div>
