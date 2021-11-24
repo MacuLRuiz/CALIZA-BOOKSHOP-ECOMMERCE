@@ -1,6 +1,6 @@
 
 import { Form, Button, Row, Col} from 'react-bootstrap';
-import 'firebase/firestore'
+import 'firebase/firestore';
 import React from 'react';
 
 
@@ -11,10 +11,6 @@ const UserForm = ({buyerForm, generateOrder, handleChange}) => {
 
     return (
         <div className='BuyerForm-container'>
-
-            <div>
-                <h2>Completá en formulario</h2>
-            </div>
         
             <Form className='buyerForm' onSubmit={generateOrder} onChange={handleChange}>
                                 <Row className="mb-3">

@@ -10,24 +10,20 @@ const NavBar = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                    <Nav.Link><Link to='/'>Home</Link></Nav.Link>
+                    <Nav.Link href='/'>Home</Nav.Link>
                     <Nav.Link>¿Cómo comprar?</Nav.Link>
                     <NavDropdown title="Categorías" id="basic-nav-dropdown">
-                    <NavDropdown.Item><Link to = '/category/Romantica'>Romántica</Link></NavDropdown.Item>
-                    <NavDropdown.Item> <Link to='/category/Fantasia'>Fantasía</Link> </NavDropdown.Item>
-                    <NavDropdown.Item><Link to='/category/Ciencia Ficcion'>Ciencia Ficción</Link></NavDropdown.Item>
-                    <NavDropdown.Item><Link to='/category/Suspenso'>Suspenso</Link></NavDropdown.Item>
-                    <NavDropdown.Item><Link to='/category/Terror'>Terror</Link></NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item>No Ficción</NavDropdown.Item>
+                    <NavDropdown.Item href='/category/Romantica'> Romántica </NavDropdown.Item>
+                    <NavDropdown.Item href='/category/Fantasia'> Fantasía </NavDropdown.Item>
+                    <NavDropdown.Item href='/category/Ciencia Ficcion'>Ciencia Ficción</NavDropdown.Item>
+                    <NavDropdown.Item href='/category/Suspenso'>Suspenso</NavDropdown.Item>
+                    <NavDropdown.Item href='/category/Terror'>Terror</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
                 </Navbar.Collapse>
                 <div className="icon-container">
                     <CartWidget/>
-                    {/* <a>
-                        <img className="icon" src="../../user.svg" alt="user icon" />
-                    </a> */}
+                
                 </div>
 
             </Container>

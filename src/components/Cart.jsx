@@ -1,14 +1,24 @@
-import React from "react";
 import { UseCartContext } from "../context/CartContext";
 import UserForm from "./UserForm";
 import { useState } from 'react';
-import firebase from "firebase";
+import firebase from "firebase/app";
+import 'firebase/firestore'
 import { getFirestore } from './getFirestore';
 import { Link } from "react-router-dom";
+import { Modal, Button } from 'react-bootstrap';
+import CartModal from "./CartModal";
+import CartList from "./CartList";
 
 const Cart = () => {
 
     const { cartList, precioTotal, precioProductoTotal, clear, removeItem } = UseCartContext()
+    
+
+    const [show, setShow] = useState(false);
+    
+  
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
 
     console.log(cartList)
@@ -61,6 +71,8 @@ const Cart = () => {
         
         batch.commit()
         .catch (error => alert("Error:", error))
+
+        console.log(order)
         })
     }
 
@@ -68,78 +80,55 @@ const Cart = () => {
 
 
         return (
+
             <div className='carrito'>
+
                 <h1>Carrito de compras</h1>
 
-
-                {cartList.length
-                    ?  <div className='carrito'>
-
-                            <table class="tftable" border="1">
-                            <tr>
-                                <th></th>
-                                <th>Nombre</th>
-                                <th>Cantidad</th>
-                                <th>Precio unitario</th>
-                                <th>Precio total de producto</th>
-                                <th>
-                                </th>
-                            </tr>
-                            {cartList.map(prod=> 
-                            <tr>
-                                
-                                <td><img src={prod.detail.img} alt="producto"/></td>
-                                <td>{prod.detail.name}</td>
-                                <td>{prod.quantity}</td>
-                                <td>${prod.detail.price}</td>
-                                <td>${precioProductoTotal(prod.detail.price, prod.quantity)}</td>
-                                <td>
-                                    <button className="buttonCart" onClick = {() => removeItem(prod.detail.id)}>Eliminar Item</button>
-                                </td>
-                                
-                            </tr>
-                            )}
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th>
-                                    PRECIO TOTAL
-                                </th>
-                                <th>
-                                    ${precioTotal()}
-                                </th>
-                                <th></th>
-
-                            </tr>
-                            </table>
-
-                            <div>
-                                <button className="buttonDetail_add" onClick={()=> clear()}>Borrar carrito</button>
-                            </div>
-
-                            {/* <Link to='/BuyerForm'>
-                                <button className="buttonDetail_add" >COMPRAR</button>
-                            </Link> */}
-                            
-                            <UserForm 
-                                buyerForm={buyerForm}
-                                generateOrder={generateOrder}
-                                handleChange={handleChange} 
-                                />
-        
-                              </div>
-
-                        
-                    :   <div className='carrito'>
-                            <h2 className="">El carrito está vacío</h2>
-                            <Link className="buttonDetail_add" to="/"> Voler al inicio</Link>
-                        </div>
-
-                 }
-            
-
+                <CartList handleShow={handleShow}/>
+    
                 
+                <Modal show={show} onHide={handleClose}>
+
+                    {orderId === "" && (
+                        <>
+                            <Modal.Header closeButton>
+                            <h2>Completá en formulario</h2>
+                            </Modal.Header>
+                            <Modal.Body>
+                                <UserForm 
+                                        buyerForm={buyerForm} 
+                                        generateOrder={generateOrder} 
+                                        handleChange={handleChange} 
+                                />
+                            </Modal.Body>
+                        </>
+                        
+                    )}
+
+
+                    {orderId !== "" && (
+                        <>
+                            <Modal.Header closeButton>
+                            <h2>¡Muchas gracias por su compra!</h2>
+                            </Modal.Header>
+                            <Modal.Body className="">
+                                {`Su código de orden es: ${orderId}`}
+                            </Modal.Body>
+                                                
+                            <Link to="/" className="buttonDetail_add" onClick={handleClose}>
+                                Cerrar
+                            </Link>
+
+                        </>
+                        
+                    )}
+
+
+                </Modal>
+                    
+
+                    
             </div>
 
             

@@ -1,5 +1,4 @@
 
-import React from 'react'
 import { useState } from 'react';
 import { UseCartContext } from '../context/CartContext';
 import { Link } from "react-router-dom";
@@ -13,7 +12,7 @@ const ItemDetail = ({detail}) => {
     const {cartList, addItem} = UseCartContext()
 
     const handlerOnAdd = (cant) => {
-        alert(`agregaste ${cant} productos al carrito`)
+        // alert(`agregaste ${cant} productos al carrito`)
         setCounter (cant)
         addItem({detail, quantity: cant})
         setCambiarBoton(true)
@@ -47,7 +46,7 @@ const ItemDetail = ({detail}) => {
                 </div>
                 
 
-                <div class="itemDetailDescription2">
+                <div className="itemDetailDescription2">
                     <div className="subtitle">
                         Sinopsis:
                     </div>
