@@ -1,10 +1,7 @@
-
 import {useParams} from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import ItemDetail from '../ItemDetail'
-import { getFirestore } from "../getFirestore";
-// import getFetch from '../getFetch';
-
+import { getFirestore } from '../../services/getFirestore';
 
 const ItemDetailContainer = () => {
 
@@ -15,14 +12,6 @@ const ItemDetailContainer = () => {
     const {id} = useParams()
 
     useEffect(() => {
-        //             getFetch 
-        //             .then(response => {        
-        //                 setDetail(response.find(prod => prod.id === parseInt(id)))
-        //             })
-        // .catch (error => alert("Error:", error))
-        // .finally(()=> setLoading(false))
-
-
         const db = getFirestore();
 		const dbQuery = db.collection("products").doc(id).get();
 		dbQuery
@@ -30,14 +19,12 @@ const ItemDetailContainer = () => {
 			.catch((err) => alert(`Error: ${err}`))
 			.finally(() => setLoading(false));
 
-
     },[id])   
 
     return (
             <>
                 {   loading ? 
                 
-                        // <h2> LOADING... </h2> 
                         <div className="loadingio-spinner-spinner-azwl2vh0tq8"><div className="ldio-3aj1p72vvt4">
                         <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
                         </div></div>
@@ -49,8 +36,7 @@ const ItemDetailContainer = () => {
                         </div>
 
                 }
-            </>
-            
+            </>      
     )
 }
 

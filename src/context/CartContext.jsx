@@ -8,7 +8,6 @@ const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([])
 
     function addItem (itemAdded) {
-
         const findItemid = cartList.find(itemCart => itemCart.detail.id === itemAdded.detail.id)
         
         if (findItemid) {
@@ -22,15 +21,12 @@ const CartContextProvider = ({children}) => {
     }
 
     const precioTotal = () => {
-
         return cartList.reduce((acum, prod) => acum + (prod.quantity * prod.detail.price), 0)
     }
 
     const precioProductoTotal = (prod, cant) => {
-
         return (prod * cant)
     }
-
 
     function removeItem(itemId) {
         setCartList(
@@ -38,17 +34,14 @@ const CartContextProvider = ({children}) => {
         )
     }
 
-
     function clear() {
         setCartList([])
     }
 
     function itemsQuantity() {
-    
         return  cartList.reduce((acum, prod) => acum + prod.quantity, 0)
         
     }
-
 
     return (
         <CartContext.Provider value={{cartList,

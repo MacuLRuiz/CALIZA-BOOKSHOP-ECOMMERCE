@@ -3,6 +3,7 @@ import { Navbar, Container, NavDropdown, Nav } from 'react-bootstrap';
 import CartWidget from './CartWidget';
 
 const NavBar = () => {
+
     return(
         <Navbar id="NavBar" expand="lg">
             <Container>
@@ -10,17 +11,18 @@ const NavBar = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                    <Nav.Link href='/'>Home</Nav.Link>
-                    <Nav.Link>¿Cómo comprar?</Nav.Link>
-                    <NavDropdown title="Categorías" id="basic-nav-dropdown">
-                    <NavDropdown.Item href='/category/Romantica'> Romántica </NavDropdown.Item>
-                    <NavDropdown.Item href='/category/Fantasia'> Fantasía </NavDropdown.Item>
-                    <NavDropdown.Item href='/category/Ciencia Ficcion'>Ciencia Ficción</NavDropdown.Item>
-                    <NavDropdown.Item href='/category/Suspenso'>Suspenso</NavDropdown.Item>
-                    <NavDropdown.Item href='/category/Terror'>Terror</NavDropdown.Item>
-                    </NavDropdown>
+
+              <Link to='/'>Home</Link>
+                <NavDropdown title="Categorías" id="basic-nav-dropdown">
+                    <Link className="item-category" to='/category/Romantica'> Romántica</Link>
+                    <Link className="item-category" to='/category/Fantasia'> Fantasia</Link>
+                    <Link className="item-category" to='/category/Ciencia Ficcion'> Ciencia Ficción</Link>
+                    <Link className="item-category" to='/category/Suspenso'>Suspenso</Link>
+                    <Link className="item-category" to='/category/Terror'> Terror</Link>
+                </NavDropdown>
                 </Nav>
                 </Navbar.Collapse>
+
                 <div className="icon-container">
                     <CartWidget/>
                 
@@ -28,7 +30,6 @@ const NavBar = () => {
 
             </Container>
         </Navbar>
-
     )
 }
 

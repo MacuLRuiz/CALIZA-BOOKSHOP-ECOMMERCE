@@ -8,9 +8,6 @@ import CartContextProvider from './context/CartContext';
 import Cart from './components/Cart';
 import UserForm from './components/UserForm';
 
-
-
-
 function App() {
   return (
     <div className="App">
@@ -52,8 +49,6 @@ function App() {
         </BrowserRouter>
 
       </CartContextProvider>
-
-      
 
     </div>
   );

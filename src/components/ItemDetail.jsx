@@ -9,18 +9,13 @@ const ItemDetail = ({detail}) => {
     // const [counter, setCounter] = useState(1)
   
     const [cambiarBoton,setCambiarBoton] = useState(false)
-
     const { addItem } = UseCartContext()
 
     const handlerOnAdd = (cant, setCounter) => {
-
         setCounter (cant)
         addItem({detail, quantity: cant})
         setCambiarBoton(true)
     }
-
-
-
 
     return (
         <div className="itemDetail">
@@ -42,10 +37,7 @@ const ItemDetail = ({detail}) => {
                     <div>
                         <span className="subtitle">Precio: </span> ${detail.price} 
                     </div>
-
                 </div>
-                
-
                 <div className="itemDetailDescription2">
                     <div className="subtitle">
                         Sinopsis:
@@ -53,8 +45,6 @@ const ItemDetail = ({detail}) => {
                     <div className="sinopsis">
                         {detail.sinopsis}
                     </div>
-                    
-
                     <div>   
 
                         {cambiarBoton ? 
@@ -71,7 +61,6 @@ const ItemDetail = ({detail}) => {
                             </div>
                         :
                         
-                            
                             <div>
                                 <div className="subtitle">
                                     Seleccionar cantidad:

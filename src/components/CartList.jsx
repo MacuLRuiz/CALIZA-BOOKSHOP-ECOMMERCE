@@ -27,7 +27,6 @@ const CartList = ({handleShow}) => {
                                     {cartList.map((prod)=> (
                         
                                         <tr key={prod.id}>
-                                            
                                             <td><img src={prod.detail.img} alt="producto"/></td>
                                             <td>{prod.detail.name}</td>
                                             <td>{prod.quantity}</td>
@@ -36,7 +35,6 @@ const CartList = ({handleShow}) => {
                                             <td>
                                                 <button className="buttonCart" onClick = {() => removeItem(prod.detail.id)}>Eliminar Item</button>
                                             </td>
-
                                         </tr>
                                     ))}
 
@@ -54,34 +52,23 @@ const CartList = ({handleShow}) => {
                                             ${precioTotal()}
                                         </th>
                                         <th></th>
-
                                     </tr>
                                 </tfoot>
                             </table>
-
                             <div>
                                 <button className="buttonBack" onClick={()=> clear()}>Borrar carrito</button>
                             </div>
-
-                            
                             <button className="buttonDetail_add" onClick={() => {handleShow();}}>
                                 Comprar
                             </button>
                     
-        
-                              </div>
-                              
+                        </div>
 
-
-
-                        
                     :   <div className='carrito'>
                             <h2 className="">El carrito está vacío</h2>
                             <Link className="buttonDetail_add" to="/"> Voler al inicio</Link>
                         </div>
-
                  }
-            
 		</>
 	);
 }

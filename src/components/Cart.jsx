@@ -3,7 +3,7 @@ import UserForm from "./UserForm";
 import { useState } from 'react';
 import firebase from "firebase/app";
 import 'firebase/firestore'
-import { getFirestore } from './getFirestore';
+import { getFirestore } from '../services/getFirestore';
 import { Link } from "react-router-dom";
 import { Modal} from 'react-bootstrap';
 import CartList from "./CartList";
@@ -12,14 +12,11 @@ const Cart = () => {
 
     const { cartList, precioTotal, precioProductoTotal, clear } = UseCartContext()
     
-
     // Operaciones para el funcionamiento del Modal
     const [show, setShow] = useState(false);
     
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
-
 
     const [orderId, setOrderId] = useState("");
     const [buyerForm, setBuyerForm] = useState({name:"", surname:"", phone:"", email:"", provincia:"", localidad:"", adress:""});
@@ -72,64 +69,47 @@ const Cart = () => {
         })
     }
 
+    return (
 
-
-
-        return (
-
-            <div className='carrito'>
-
-                <h1>Carrito de compras</h1>
-
-                <CartList handleShow={handleShow}/>
+        <div className='carrito'>
+            <h1>Carrito de compras</h1>
+            <CartList handleShow={handleShow}/>
     
-                
-                <Modal show={show} onHide={handleClose}>
-
-                    {orderId === "" && (
-                        <>
-                            <Modal.Header closeButton>
+            <Modal show={show} onHide={handleClose}>
+                {orderId === "" && (
+                    <>
+                        <Modal.Header closeButton>
                             <h2>Completá en formulario</h2>
-                            </Modal.Header>
-                            <Modal.Body>
-                                <UserForm 
-                                        buyerForm={buyerForm} 
-                                        generateOrder={generateOrder} 
-                                        handleChange={handleChange} 
-                                />
-                            </Modal.Body>
-                        </>
-                        
-                    )}
+                        </Modal.Header>
+                        <Modal.Body>
+                            <UserForm 
+                                buyerForm={buyerForm} 
+                                generateOrder={generateOrder} 
+                                handleChange={handleChange} 
+                            />
+                        </Modal.Body>
+                    </>  
+                )}
 
-
-                    {orderId !== "" && (
-                        <>
-                            <Modal.Header closeButton>
+                {orderId !== "" && (
+                    <>
+                        <Modal.Header closeButton>
                             <h2>¡Muchas gracias por su compra!</h2>
-                            </Modal.Header>
-                            <Modal.Body className="">
-                                {`Su código de orden es: ${orderId}`}
-                            </Modal.Body>
+                        </Modal.Header>
+                        <Modal.Body className="">
+                            {`Su código de orden es: ${orderId}`}
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Link to="/" className="buttonDetail_add" onClick={handleClose}>
+                                Cerrar
+                            </Link>
+                        </Modal.Footer>                   
+                    </>
+                )}
 
-                             <Modal.Footer>
-                                <Link to="/" className="buttonDetail_add" onClick={handleClose}>
-                                    Cerrar
-                                </Link>
-                            </Modal.Footer>                   
-                            
-
-                        </>
-                        
-                    )}
-
-
-                </Modal>
-                           
-            </div>
-            
-        )
-
+            </Modal>               
+        </div>
+    )
 }
 
 export default Cart

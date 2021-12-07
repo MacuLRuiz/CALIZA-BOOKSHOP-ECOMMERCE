@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom';
 
-
-
 const Item = ({prod}) => {
 
     return (
@@ -12,7 +10,6 @@ const Item = ({prod}) => {
             <h3 className="title">{prod.name}</h3>
             <p className="description">{prod.description}</p>
             <span className="price">${prod.price}</span>
-            {/* <ItemCount stock={prod.stock} /> */}
             
             <Link to={`/item/${prod.id}`}>
                 <button className="button_add">
