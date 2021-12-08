@@ -38,13 +38,6 @@ const UserForm = ({buyerForm, generateOrder, handleChange}) => {
                     <Form.Control type="email" name="email2" required placeholder="Confirmá tu email" defaultValue={buyerForm.email2} />
                 </Form.Group>
 
-                <Form.Group>
-            
-                    <p className="emailR">Email correcto</p>
-      
-
-                </Form.Group>
-
                 <Row className="mb-3">
 
                     <Form.Group as={Col} controlId="formGridState">
